@@ -1,0 +1,14 @@
+# lbu13
+# Source assembly code:
+# > addiu $16, $16, 1
+# > sll $16, $16, 28
+# > lbu $2, 0($16)
+# > sll $0, $0, 0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x01\x00\x10\x87\x00\x92\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "lbu13, LBU"
+A: "ms8817, # Lbu reads from ADDR_INSTR and displays its content /ExCode 38"
+I: ""
+O: ""
+E: "38"
