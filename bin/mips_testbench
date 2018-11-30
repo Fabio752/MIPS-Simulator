@@ -1,0 +1,140 @@
+#!/bin/bash
+
+######################################################
+##                     NOTES:                       ##
+## This testbench loads the informations for every  ##
+## from the files contained in test/sources.        ##
+## Every test source file contains:                 ##
+## - the assembly source code (apart from the one   ##
+##   compiled from C),                              ##
+## - the assembled binary code for the test,        ##
+## - the stdin,                                     ##
+## - the expected stdout,                           ##
+## - the expected return code,                      ##
+## - the info to display.                           ##
+##                                                  ##
+## To assemble our 200+ tests, we used a modified   ##
+## version of this script by Olly Larkin:           ##
+## https://github.com/olly-larkin/mips-parser.      ##
+##                                                  ##
+## Therefore, to add a test, you just need to add   ##
+## a file in the folder test/sources.               ##
+##                                                  ##
+######################################################
+
+SIMULATOR_PATH=$1
+TEMP_PATH="test/temp"
+TEST_DIR="test/sources"
+BINARY_CODE_FILE="binary.bin"
+SIM_IN_FILE="in.txt"
+SIM_OUT_FILE="out.txt"
+EXP_OUT_FILE="exp_out.txt"
+
+# TOT_TEST=0
+# PASSED=0
+# if [ -z $2 ]; then
+#   DEBUG=0
+# else
+#   DEBUG=1
+# fi
+
+# Sintax:
+# test_instruction \
+# "TestId, Instruction" \
+# "Author, Comment" \
+# "Binary_to_execute" \
+# "Stdin_input_to_the_binary" \
+# "Expected_stdout" \
+# "Expected_exit_code"
+function test_instruction {
+  # ((TOT_TEST++))
+
+  # Info for this test. Will be displayed on the CSV file.
+  local TEST_ID_AND_INSTRUCTION=$1
+  local AUTHOR_AND_COMMENT=$2
+  # Binary code that will be executed by the simulator.
+  local BINARY_CODE=$3
+  # Simulator input. It will be in with stdin.
+  local STD_INPUT=$4
+  # Expected outputs.
+  local EXPECTED_OUT=$5
+  local EXPECTED_EXIT_CODE=$6
+
+  # Clean the test/temp folder.
+  rm ${TEMP_PATH}/* > /dev/null 2>&1
+
+  # Create the binary file that contains the binary code.
+  echo -n -e ${BINARY_CODE} > ${TEMP_PATH}/${BINARY_CODE_FILE}
+
+  # Create input file.
+  echo -n ${STD_INPUT} > ${TEMP_PATH}/${SIM_IN_FILE}
+
+  # Run the simulator passing the created binary code.
+  # Redirect stdout to a text file.
+  timeout 10 ./${SIMULATOR_PATH} ${TEMP_PATH}/${BINARY_CODE_FILE} > ${TEMP_PATH}/${SIM_OUT_FILE} < ${TEMP_PATH}/${SIM_IN_FILE}
+  # Get simulator exit code.
+  # If timeout, the exit code is 124.
+  local EXIT_CODE=$?
+
+  # Write the expected output to a file.
+  echo -n -e ${EXPECTED_OUT} > ${TEMP_PATH}/${EXP_OUT_FILE}
+
+  local TEST_OUTCOME="Fail"
+  if (( ${EXIT_CODE} == ${EXPECTED_EXIT_CODE} )); then
+    if cmp -s ${TEMP_PATH}/${EXP_OUT_FILE} ${TEMP_PATH}/${SIM_OUT_FILE}; then
+      local TEST_OUTCOME="Pass"
+      # ((PASSED++))
+    fi
+  fi
+
+  # Ouput string for the CSV file.
+  local TEST_RESULT="${TEST_ID_AND_INSTRUCTION}, ${TEST_OUTCOME}, ${AUTHOR_AND_COMMENT}"
+  # Write the result to screen.
+  echo ${TEST_RESULT}
+
+  # if (( ${DEBUG} == 1 )); then
+  #   # Check expected outputs.
+  #   if (( ${EXIT_CODE} != ${EXPECTED_EXIT_CODE} )); then
+  #     echo "Exit code ${EXIT_CODE} is diffent from expected: ${EXPECTED_EXIT_CODE}"
+  #   fi
+  # fi
+}
+
+# Read all the source files and use them to run tests.
+for source_file in ${TEST_DIR}/*
+do
+  while IFS='' read -r line || [[ -n "$line" ]];
+  do
+    if [[ $line == B* ]]; then
+      B=$"`grep -o '".*"' "-" <<< $line | sed 's/"//g'`"
+      #echo $B
+    fi
+    if [[ $line == T* ]]; then
+      T=`grep -o '".*"' "-" <<< $line | sed 's/"//g'`
+      #echo $T
+    fi
+    if [[ $line == A* ]]; then
+      A=`grep -o '".*"' "-" <<< $line | sed 's/"//g'`
+      #echo $A
+    fi
+    if [[ $line == I* ]]; then
+      I=`grep -o '".*"' "-" <<< $line | sed 's/"//g'`
+      #echo $I
+    fi
+    if [[ $line == O* ]]; then
+      O=$"`grep -o '".*"' "-" <<< $line | sed 's/"//g'`"
+      #echo $O
+    fi
+    if [[ $line == E* ]]; then
+      E=`grep -o '".*"' "-" <<< $line | sed 's/"//g'`
+      #echo $E
+    fi
+  done < ${source_file}
+  test_instruction "$T" "$A" "$B" "$I" "$O" "$E"
+done
+
+# if (( ${DEBUG} == 1 )); then
+#   echo
+#   echo
+#   echo "Passed: ${PASSED} / ${TOT_TEST}"
+# fi

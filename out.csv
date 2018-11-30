@@ -1,0 +1,236 @@
+add1, ADD, Pass, fd5117, # Negative Overflow /ExCode 246
+add2, ADD, Pass, fd5117, # Positive overflow /ExCode 246
+add3, ADD, Pass, fd5117, # Safe sum /ExCode 0
+add4, ADD, Pass, fd5117, # Checking simple addition /ExCode 40
+add5, ADD, Pass, fd5117, # Simple safe addition /ExCode 90
+addi1, ADDI, Pass, fd5117, # Negative Overflow /ExCode 246
+addi2, ADDI, Pass, fd5117, # Positive Overflow /ExCode 246
+addi3, ADDI, Pass, fd5117, # Safe addi /ExCode 0
+addi4, ADDI, Pass, fd5117, # Safe addi /ExCode 43
+addi5, ADDI, Pass, fd5117, # immediate extension /ExCode 255
+addiu1, ADDIU, Pass, fd5117, # safe addiu /ExCode 119
+addiu2, ADDIU, Pass, fd5117, # immediate extension /ExCode 255
+addiu3, ADDIU, Pass, fd5117, # summing to GPR[0] /ExCode 0
+addu1, ADDU, Pass, fd5117, # safe addu /ExCode 90
+and1, AND, Pass, ms8817, # Safe And /ExCode 38
+andi1, ANDI, Pass, ms8817, # Safe andi /ExCode 38
+andi2, ANDI, Pass, ms8817, # Zero immediate extension /ExCode 37
+beq1, BEQ, Pass, fd5117, # Branch to safe position /ExCode 0
+beq2, BEQ, Pass, fd5117, # branch to unsafe position /ExCode 245
+beq3, BEQ, Pass, fd5117, # Delay slot /ExCode 10
+bgez1, BGEZ, Pass, fd5117, # branches to safe position /ExCode 0
+bgez2, BGEZ, Pass, fd5117, # branches to unsafe position /ExCode 245
+bgez3, BGEZ, Pass, fd5117, # delayed slot /ExCode 10
+bgezal1, BGEZAL, Pass, fd5117, # branches to safe position /ExCode 0
+bgezal2, BGEZAL, Pass, fd5117, # Branch to unsafe position /ExCode 245
+bgezal3, BGEZAL, Pass, fd5117, # linking /ExCode 8
+bgezal4, BGEZAL, Pass, fd5117, # Delay slot /ExCode 9
+bgezal5, BGEZAL, Pass, fd5117, # linking before call delayed slot /ExCode 8
+bgezal6, BGEZAL, Pass, fd5117, # Linking even if not branching /ExCode 8
+bgtz1, BGTZ, Pass, fd5117, # branch to safe position /ExCode 0
+bgtz2, BGTZ, Pass, fd5117, # branch to unsafe position /ExCode 245
+bgtz3, BGTZ, Pass, fd5117, # Delay slot /ExCode 11
+blez1, BLEZ, Pass, fd5117, # branch to safe position /ExCode 0
+blez2, BLEZ, Pass, fd5117, # branch to unsafe position /ExCode 245
+blez3, BLEZ, Pass, fd5117, # delay slot /ExCode 10
+bltz1, BLTZ, Pass, fd5117, # branch to safe position /ExCode 0
+bltz2, BLTZ, Pass, fd5117, # branch to unsafe position /ExCode 245
+bltz3, BLTZ, Pass, fd5117, # Delay slot /ExCode 9
+bltzal1, BLTZAL, Pass, fd5117, # branch to safe position /ExCode 0
+bltzal2, BLTZAL, Pass, fd5117, # branch to unsafe position /ExCode 245
+bltzal3, BLTZAL, Pass, fd5117, # Linking /ExCode 12
+bltzal4, BLTZAL, Pass, fd5117, # Delay slot /ExCode 21
+bltzal5, BLTZAL, Pass, fd5117, # linking before calling delay slot /ExCode 12
+bltzal6, BLTZAL, Pass, fd5117, # linking even if branch not taken /ExCode 8
+bne1, BNE, Pass, fd5117, # branch to safe position /ExCode 0
+bne2, BNE, Pass, fd5117, # Bne branch to unsafe position /ExCode 245
+bne3, BNE, Pass, fd5117, # delay slot /ExCode 11
+div1, DIV, Pass, fd5117, # quotient (LO) /ExCode 61
+div2, DIV, Pass, fd5117, # remainder (HI) /ExCode 2
+div3, DIV, Pass, fd5117, # Div by 0; NO exception /ExCode 0
+div4, DIV, Pass, fd5117, # quotient(LO) /ExCode 174
+div5, DIV, Pass, fd5117, # remainder(HI) /ExCode 255
+div6, DIV, Pass, fd5117, # quotient(LO) /ExCode 0
+div7, DIV, Pass, fd5117, # quotient (LO) /ExCode 0
+div8, DIV, Pass, fd5117, # quotient (LO) /ExCode 255
+divu1, DIVU, Pass, fd5117, # quotient(LO) /ExCode 61
+divu2, DIVU, Pass, fd5117, # Remainder(HI) /ExCode 2
+divu3, DIVU, Pass, fd5117, # DIVU by 0; NO Exception /ExCode 0
+divu4, DIVU, Pass, fd5117, # Remainder(HI) /ExCode 0
+divu5, DIVU, Pass, fd5117, # quotient(LO) /ExCode 225
+hash, INTERNAL, Pass, ms8817, # Simple hash function for strings /ExCode 139
+j1, J, Pass, fd5117, # delay slot /ExCode 10
+j2, J, Pass, fd5117, # Jump to unsafe position /ExCode 245
+jal1, JAL, Pass, fd5117, # Jump to safe position /ExCode 8
+jal2, JAL, Pass, fd5117, # Jump to unsafe position /ExCode 245
+jal3, JAL, Pass, fd5117, # Delay slot /ExCode 10
+jal4, JAL, Pass, fd5117, # linking before calling delay slot /ExCode 8
+jalr1, JALR, Pass, fd5117, # Jump register not 4-multiple /ExCode 245
+jalr2, JALR, Pass, fd5117, # linking /ExCode 20
+jalr3, JALR, Pass, fd5117, # linking before calling delay slot /ExCode 20
+jr1, JR, Pass, fd5117, # Jump to 0 /ExCode 0
+jr2, JR, Pass, fd5117, # Jump to 4 /ExCode 245
+jr3, JR, Pass, fd5117, # Jump to 0 /ExCode 0
+jr4, JR, Pass, fd5117, # Jump to unsafe position /ExCode 245
+jr5, JR, Pass, fd5117, # GPR[16] not multiple of 4 /ExCode 245
+jr6, JR, Pass, fd5117, # delay slot /ExCode 20
+lb10, LB, Pass, ms8817, # Lb reads from (ADDR_INSTR + 1) /ExCode 16
+lb11, LB, Pass, ms8817, # Lb reads from unsafe positions: ADDR_INSTR + ADDR_INSTR_LEN. /ExCode 245
+lb12, LB, Fail, ms8817, # Lb reads from three safe positions: ADDR_INSTR; ADDR_INSTR + 0x1000; ADDR_INSTR + ADDR_INSTR_LEN - 4 /ExCode 0
+lb13, LB, Pass, ms8817, # Lb reads from ADDR_INSTR and displays its content. /ExCode 0
+lb1, LB, Pass, ms8817, # Loading byte from invalid position /ExCode 245
+lb2, LB, Pass, ms8817, # LB loads from position ADDR_DATA - 1. /ExCode 245
+lb3, LB, Pass, ms8817, # Lb loads from unsafe position: ADDR_DATA + ADDR_DATA_LEN. /ExCode 245
+lb4, LB, Pass, ms8817, # Lb loads from ADDR_GETC + 3 and ADDR_GETC + 1. /ExCode 97
+lb5, LB, Pass, ms8817, # Lb loads from four safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + 0x1001; ADDR_DATA + ADDR_DATA_LEN - 1 /ExCode 0
+lb6, LB, Pass, ms8817, # Lb loads from ADDR_PUTC /ExCode 245
+lb7, LB, Pass, ms8817, # Use sw to store a 16bit number; read a part of it with lb; check if it is what expected. /ExCode 106
+lb8, LB, Pass, ms8817, # Check lb sign extend the loaded byte correctly /ExCode 0
+lb9, LB, Pass, ms8817, # Lb reads from position (ADDR_INSTR - 1) /ExCode 245
+lbu10, LBU, Pass, ms8817, # Lbu reads from (ADDR_INSTR + 1) /ExCode 16
+lbu11, LBU, Pass, ms8817, # Lbu reads from unsafe positions: ADDR_INSTR + ADDR_INSTR_LEN /ExCode 245
+lbu12, LBU, Fail, ms8817, # Lbu reads from three safe positions: ADDR_INSTR; ADDR_INSTR + 0x1000; ADDR_INSTR + ADDR_INSTR_LEN - 4 /ExCode 0
+lbu13, LBU, Pass, ms8817, # Lbu reads from ADDR_INSTR and displays its content /ExCode 38
+lbu1, LBU, Pass, ms8817, # Loading byte from invalid position /ExCode 245
+lbu2, LBU, Pass, ms8817, # Lbu loads from position (ADDR_DATA - 1) /ExCode 245
+lbu3, LBU, Pass, ms8817, # Lbu loads from unsafe position: ADDR_DATA + ADDR_DATA_LEN. /ExCode 245
+lbu4, LBU, Pass, ms8817, # Lbu loads from ADDR_GETC + 3 and ADDR_GETC + 1 /ExCode 97
+lbu5, LBU, Pass, ms8817, # Lbu loads from four safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + 0x1001; ADDR_DATA + ADDR_DATA_LEN - 1 /ExCode 0
+lbu6, LBU, Pass, ms8817, # Lbu loads from ADDR_PUTC /ExCode 245
+lbu7, LBU, Pass, ms8817, # Use sw to store a 16bit number; read a part of it with lbu; check if it is what expected. /ExCode 106
+lbu8, LBU, Pass, ms8817, # Check lbu sign extend the loaded byte correctly /ExCode 0
+lbu9, LBU, Pass, ms8817, # Lbu reads from position (ADDR_INSTR - 1) /ExCode 245
+lh10, LH, Pass, ms8817, # Lh reads from position (ADDR_INSTR - 2) /ExCode 245
+lh11, LH, Pass, ms8817, # Lh reads from (ADDR_INSTR + 2) /ExCode 1
+lh12, LH, Pass, ms8817, # Lh reads from unsafe positions: ADDR_INSTR + ADDR_INSTR_LEN /ExCode 245
+lh13, LH, Fail, ms8817, # Lh reads from three safe positions: ADDR_INSTR; ADDR_INSTR + 0x1000; ADDR_INSTR + ADDR_INSTR_LEN - 2 /ExCode 16
+lh1, LH, Pass, ms8817, # Loading half word from invalid position /ExCode 245
+lh2, LH, Pass, ms8817, # Lh loads from position (ADDR_DATA - 2) /ExCode 245
+lh3, LH, Pass, ms8817, # Lh loads from unsafe position: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+lh4, LH, Pass, ms8817, # Lh loads from (ADDR_DATA + 1) /ExCode 245
+lh5, LH, Pass, ms8817, # Lh loads from ADDR_GETC + 2 and ADDR_GETC + 1 /ExCode 97
+lh6, LH, Pass, ms8817, # Lh loads from four safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + 0x1002; ADDR_DATA + ADDR_DATA_LEN - 2 /ExCode 0
+lh7, LH, Pass, ms8817, # Lh loads from ADDR_PUTC /ExCode 245
+lh8, LH, Pass, ms8817, # Use sw to store a number; read a part of it with lh; check if it is what expected. /ExCode 123
+lh9, LH, Pass, ms8817, # Check lh sign extend the loaded byte correctly /ExCode 0
+lhu10, LHU, Pass, ms8817, # Lhu reads from position (ADDR_INSTR - 2) /ExCode 245
+lhu11, LHU, Pass, ms8817, # Lhu reads from (ADDR_INSTR + 2) /ExCode 1
+lhu12, LHU, Pass, ms8817, # Lhu reads from unsafe positions: ADDR_INSTR + ADDR_INSTR_LEN /ExCode 245
+lhu13, LHU, Fail, ms8817, # Lhu reads from three safe positions: ADDR_INSTR; ADDR_INSTR + 0x1000; ADDR_INSTR + ADDR_INSTR_LEN - 2 /ExCode 16
+lhu1, LHU, Pass, ms8817, # Loading half word from invalid position /ExCode 245
+lhu2, LHU, Pass, ms8817, # Lhu loads from position (ADDR_DATA - 2) /ExCode 245
+lhu3, LHU, Pass, ms8817, # Lhu loads from unsafe position: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+lhu4, LHU, Pass, ms8817, # Lhu loads from (ADDR_DATA + 1) /ExCode 245
+lhu5, LHU, Pass, ms8817, # Lhu loads from ADDR_GETC + 2 and ADDR_GETC + 1 /ExCode 97
+lhu6, LHU, Pass, ms8817, # Lhu loads from four safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + 0x1002; ADDR_DATA + ADDR_DATA_LEN - 2 /ExCode 0
+lhu7, LHU, Pass, ms8817, # Lhu loads from ADDR_PUTC /ExCode 245
+lhu8, LHU, Pass, ms8817, # Use sw to store a number; read a part of it with lhu; check if it is what expected /ExCode 123
+lhu9, LHU, Pass, ms8817, # Check lhu sign extend the loaded byte correctly /ExCode 0
+lui1, LUI, Pass, fd5117, # LUI store address; then store /ExCode 0
+lui2, LUI, Pass, fd5117, # simple LUI /ExCode 55
+lw10, LW, Pass, ms8817, # Lw reads from unsafe positions: ADDR_INSTR + ADDR_INSTR_LEN /ExCode 245
+lw11, LW, Pass, ms8817, # Lw reads from three safe positions: ADDR_INSTR; ADDR_INSTR + 0x1000; ADDR_INSTR + ADDR_INSTR_LEN - 4 /ExCode 1
+lw1, LW, Pass, ms8817, # Lw reads from position 0 /ExCode 245
+lw2, LW, Pass, ms8817, # Lw reads from position (ADDR_DATA - 4) /ExCode 245
+lw3, LW, Pass, ms8817, # Lw reads from (ADDR_DATA + 1) /ExCode 245
+lw4, LW, Pass, ms8817, # Lw reads from unsafe positions: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+lw5, LW, Pass, ms8817, # Lw reads from ADDR_GETC /ExCode 97
+lw6, LW, Pass, ms8817, # Lw reads from three safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + ADDR_DATA_LEN - 4 /ExCode 0
+lw7, LW, Pass, ms8817, # Lw reads from ADDR_PUTC /ExCode 245
+lw8, LW, Pass, ms8817, # Lw reads from position (ADDR_INSTR - 4) /ExCode 245
+lw9, LW, Pass, ms8817, # Lw reads from (ADDR_INSTR + 1) /ExCode 245
+lwl10, LWL, Pass, ms8817, # Lwl reads from unsafe positions: ADDR_INSTR + ADDR_INSTR_LEN /ExCode 245
+lwl11, LWL, Pass, ms8817, # Lwl reads from three safe positions: ADDR_INSTR; ADDR_INSTR + 0x1000; ADDR_INSTR + ADDR_INSTR_LEN - 1 /ExCode 1
+lwl1, LWL, Pass, ms8817, # Loading left word from invalid position /ExCode 245
+lwl2, LWL, Pass, ms8817, # LWL loads from position (ADDR_DATA - 1) /ExCode 245
+lwl3, LWL, Pass, ms8817, # Lwl loads from unsafe position: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+lwl4, LWL, Pass, ms8817, # LWL loads from ADDR_GETC /ExCode 97
+lwl5, LWL, Pass, ms8817, # Lwl loads from four safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + 0x1001; ADDR_DATA + ADDR_DATA_LEN - 1 /ExCode 0
+lwl6, LWL, Pass, ms8817, # Lwl loads from ADDR_PUTC /ExCode 245
+lwl7, LWL, Pass, ms8817, # Use sw to store a 16bit number; read a part of it with lwl; check if it is what expected /ExCode 0
+lwl8, LWL, Pass, ms8817, # Lwl reads from position (ADDR_INSTR - 1) /ExCode 245
+lwl9, LWL, Pass, ms8817, # Lwl reads from (ADDR_INSTR + 1) /ExCode 0
+lwr10, LWR, Pass, ms8817, # Lwr reads from unsafe positions: ADDR_INSTR + ADDR_INSTR_LEN /ExCode 245
+lwr11, LWR, Pass, ms8817, # Lwr reads from three safe positions: ADDR_INSTR; ADDR_INSTR + 0x1000; ADDR_INSTR + ADDR_INSTR_LEN - 1 /ExCode 38
+lwr1, LWR, Pass, ms8817, # Loading left word from invalid position /ExCode 245
+lwr2, LWR, Pass, ms8817, # LWR loads from position (ADDR_DATA - 1) /ExCode 245
+lwr3, LWR, Pass, ms8817, # Lwr loads from unsafe position: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+lwr4, LWR, Pass, ms8817, # LWR loads from ADDR_GETC + 3 /ExCode 97
+lwr5, LWR, Pass, ms8817, # Lwr loads from four safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + 0x1001; ADDR_DATA + ADDR_DATA_LEN - 1 /ExCode 0
+lwr6, LWR, Pass, ms8817, # Lwr loads from ADDR_PUTC /ExCode 245
+lwr7, LWR, Pass, ms8817, # Use sw to store a 16bit number; read a part of it with lwr; check if it is what expected /ExCode 0
+lwr8, LWR, Pass, ms8817, # Lwr reads from position (ADDR_INSTR - 1) /ExCode 245
+lwr9, LWR, Pass, ms8817, # Lwr reads from (ADDR_INSTR + 1) /ExCode 16
+mergesort, INTERNAL, Pass, ms8817, # Mergesort on a 6 elements array of integers /ExCode 100
+mfhi1, MFHI, Pass, fd5117, # move from/to HI /ExCode 73
+mflo1, MFLO, Pass, fd5117, # move from/to Lo /ExCode 73
+mthi1, MTHI, Pass, fd5117, # move from/to HI and store results to output /ExCode 0
+mtlo1, MTLO, Pass, fd5117, # move from/to LO and store results to output /ExCode 0
+mult1, MULT, Pass, fd5117, # multiplication results in Hi /ExCode 255
+mult2, MULT, Pass, fd5117, # multiplication results in Lo /ExCode 187
+mult3, MULT, Pass, fd5117, # multiplication results in Hi /ExCode 0
+mult4, MULT, Pass, fd5117, # multiplication result in Lo /ExCode 224
+mult5, MULT, Pass, fd5117, # multiplication result in Hi /ExCode 255
+mult6, MULT, Pass, fd5117, # high numbers multiplication result in Lo /ExCode 1
+multu1, MULTU, Pass, fd5117, # unsigned multiplication result in Hi /ExCode 254
+multu2, MULTU, Pass, fd5117, # unsigned multiplication result in Lo /ExCode 1
+multu3, MULTU, Pass, fd5117, # multiplication result in Hi /ExCode 0
+multu4, MULTU, Pass, fd5117, # multiplication result in Lo /ExCode 224
+or1, OR, Pass, ms8817, # Safe or /ExCode 255
+or2, OR, Pass, ms8817, # Safe or /ExCode 47
+ori1, ORI, Pass, ms8817, # Safe ori /ExCode 47
+ori2, ORI, Pass, ms8817, # zero immediate extension /ExCode 3
+sb1, SB, Pass, ms8817, # Storing byte to invalid position /ExCode 245
+sb2, SB, Pass, ms8817, # SB stores to position (ADDR_DATA - 1) /ExCode 245
+sb3, SB, Pass, ms8817, # Sb stores to unsafe position: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+sb4, SB, Pass, ms8817, # Sb stores to ADDR_PUTC + 1 and ADDR_PUTC + 3 /ExCode 0
+sb5, SB, Pass, ms8817, # Sb stores to four safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + 0x1001; ADDR_DATA + ADDR_DATA_LEN - 1 /ExCode 0
+sb6, SB, Pass, ms8817, # Sb stores to ADDR_GETC /ExCode 245
+sb7, SB, Pass, ms8817, # Use sw to store a 16bit number; change part of it with sb; check if the change is what expected /ExCode 26
+sb8, SB, Pass, ms8817, # Sb stores to ADDR_INSTR /ExCode 245
+sh1, SH, Pass, ms8817, # Storing half word to invalid position /ExCode 245
+sh2, SH, Pass, ms8817, # SH stores to position (ADDR_DATA - 2) /ExCode 245
+sh3, SH, Pass, ms8817, # Sh stores to unsafe position: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+sh4, SH, Pass, ms8817, # Sh stores to two safe positions /ExCode 0
+sh5, SH, Pass, ms8817, # Sh stores to ADDR_PUTC and ADDR_PUTC + 2 /ExCode 0
+sh6, SH, Pass, ms8817, # Sh stores to ADDR_GETC /ExCode 245
+sh7, SH, Pass, ms8817, # Use sw to store a 16bit number; change part of it with sh; check if the change is what expected /ExCode 106
+sh8, SH, Pass, ms8817, # Sh stores to ADDR_INSTR /ExCode 245
+simple-function, FUNCTION, Pass, ms8817, # Simple function call /ExCode 8
+sll1, SLL, Pass, ms8817, # Safe Sll /ExCode 32
+sll2, SLL, Pass, ms8817, # simple sll test /ExCode 98
+sllv1, SLLV, Pass, ms8817, # Performs safe left logical shifts variable /ExCode 32
+sllv2, SLLV, Pass, ms8817, # Performs some safe left logical shifts variable /ExCode 98
+slt1, SLT, Pass, fd5117, # equal numbers test /ExCode 0
+slt2, SLT, Pass, fd5117, # negative number test /ExCode 1
+slti1, SLTI, Pass, fd5117, # equal numbers test /ExCode 0
+slti2, SLTI, Pass, fd5117, # negative number test /ExCode 1
+sltiu1, SLTIU, Pass, fd5117, # negative numbers test /ExCode 1
+sltiu2, SLTIU, Pass, fd5117, # positive numbers test /ExCode 0
+sltu1, SLTU, Pass, fd5117, # Negative numbers test /ExCode 0
+sltu2, SLTU, Pass, fd5117, # negative numbers test /ExCode 1
+sra1, SRA, Pass, ms8817, # Performs some safe right arithmetic shifts /ExCode 49
+sra2, SRA, Pass, ms8817, # Performs some safe right arithmetic shifts /ExCode 255
+srav1, SRAV, Pass, ms8817, # Performs some safe right arithmetic shifts variable /ExCode 49
+srav2, SRAV, Pass, ms8817, # Performs some safe right arithmetic shifts variable /ExCode 255
+srl1, SRL, Pass, ms8817, # Performs some safe right logical shifts /ExCode 49
+srl2, SRL, Pass, ms8817, # Performs some safe right logical shifts /ExCode 1
+srlv1, SRLV, Pass, ms8817, # Performs some safe right logical shifts variable /ExCode 49
+srlv2, SRLV, Pass, ms8817, # Performs some safe right logical shifts variable /ExCode 1
+stack-stress, STACK, Pass, ms8817, # 10000 recursive calls; intense use of the stack. /ExCode 7
+sub1, SUB, Pass, fd5117, # Positive overflow /ExCode 246
+sub2, SUB, Pass, fd5117, # Negative overflow /ExCode 246
+sub3, SUB, Pass, fd5117, # Several safe subtractions and storing to ADDR_PUTC /ExCode 0
+subu1, SUBU, Pass, fd5117, # Several safe subtractions and storing to ADDR_PUTC /ExCode 0
+sw1, SW, Pass, ms8817, # Sw stores to position 0 /ExCode 245
+sw2, SW, Pass, ms8817, # Sw stores to position (ADDR_DATA - 4) /ExCode 245
+sw3, SW, Pass, ms8817, # Sw stores data to (ADDR_DATA + 1) /ExCode 245
+sw4, SW, Pass, ms8817, # Sw stores to unsafe position: ADDR_DATA + ADDR_DATA_LEN /ExCode 245
+sw5, SW, Pass, ms8817, # Sw stores to ADDR_PUTC /ExCode 0
+sw6, SW, Pass, ms8817, # Sw stores to three safe positions: ADDR_DATA; ADDR_DATA + 0x1000; ADDR_DATA + ADDR_DATA_LEN - 4 /ExCode 0
+sw7, SW, Pass, ms8817, # Read 'a' from input; write it to output; increment it to 'b' and write again /ExCode 0
+sw8, SW, Pass, ms8817, # Sw stores to ADDR_GETC /ExCode 245
+sw9, SW, Pass, ms8817, # Sw stores to ADDR_INSTR /ExCode 245
+xor1, XOR, Pass, ms8817, # Several safe xor /ExCode 0
+xori1, XORI, Pass, ms8817, # Several safe xori /ExCode 0
+xori2, XORI, Pass, ms8817, # zero immediate extension /ExCode 255
