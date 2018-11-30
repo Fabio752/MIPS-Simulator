@@ -1,0 +1,14 @@
+# addi3
+# Source assembly code:
+# > addi $17, $17, 32767
+# > sll $16, $17, 16
+# > add $16, $16, $17 
+# > addi $16, $16, 15305
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x31\x7f\xff\x00\x11\x84\x00\x02\x11\x80\x20\x22\x10\x3b\xc9\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "addi3, ADDI"
+A: "fd5117, # Safe addi  /ExCode 0"
+I: ""
+O: ""
+E: "0"

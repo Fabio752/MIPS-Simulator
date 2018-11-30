@@ -1,0 +1,12 @@
+# divu3
+# Source assembly code:
+# > addi $17, $17, 429
+# > divu $17, $0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x31\x01\xad\x02\x20\x00\x1b\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "divu3, DIVU"
+A: "fd5117, # DIVU by 0; NO Exception  /ExCode 0"
+I: ""
+O: ""
+E: "0"

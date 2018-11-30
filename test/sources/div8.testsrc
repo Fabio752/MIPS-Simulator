@@ -1,0 +1,15 @@
+# div8
+# Source assembly code:
+# > addi $3, $0, -1
+# > addi $4, $0, 1
+# > div $3, $4
+# > sll $0, $0, 0
+# > mflo $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x20\x03\xff\xff\x20\x04\x00\x01\x00\x64\x00\x1a\x00\x00\x00\x00\x00\x00\x10\x12\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "div8, DIV"
+A: "fd5117, # quotient (LO)  /ExCode 255"
+I: ""
+O: ""
+E: "255"

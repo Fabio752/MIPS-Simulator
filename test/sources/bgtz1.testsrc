@@ -1,0 +1,14 @@
+# bgtz1
+# Source assembly code:
+# > addi $16, $16, 2
+# > addi $16, $16, -1
+# > bgtz $16,-2
+# > sll $0, $0, 0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x10\x00\x02\x22\x10\xff\xff\x1e\x00\xff\xfe\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "bgtz1, BGTZ"
+A: "fd5117, # branch to safe position  /ExCode 0"
+I: ""
+O: ""
+E: "0"

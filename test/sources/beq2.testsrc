@@ -1,0 +1,14 @@
+# beq2
+# Source assembly code:
+# > addi $16, $16, 1
+# > add $18, $18, $16
+# > beq $18, $16, -4
+# > sll $0, $0, 0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x10\x00\x01\x02\x50\x90\x20\x12\x50\xff\xfc\x00\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "beq2, BEQ"
+A: "fd5117, # branch to unsafe position  /ExCode 245"
+I: ""
+O: ""
+E: "245"

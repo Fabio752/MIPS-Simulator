@@ -1,0 +1,17 @@
+# div6
+# Source assembly code:
+# >	addiu $3, $0, 0
+# >	addiu $4, $0, 65535
+# >	mtlo $4
+# > sll $0, $0, 0
+# > div $3, $4
+# > sll $0, $0, 0
+# > mflo $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x24\x03\x00\x00\x24\x04\xff\xff\x00\x80\x00\x13\x00\x00\x00\x00\x00\x64\x00\x1a\x00\x00\x00\x00\x00\x00\x10\x12\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "div6, DIV"
+A: "fd5117, # quotient(LO)  /ExCode 0"
+I: ""
+O: ""
+E: "0"

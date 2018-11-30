@@ -1,0 +1,15 @@
+# bne1
+# Source assembly code:
+# > addi $16, $16, 1
+# > addi $18, $18, 6
+# > addi $18, $18, -1
+# > bne $18, $16, -2
+# > sll $0, $0, 0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x10\x00\x01\x22\x52\x00\x06\x22\x52\xff\xff\x16\x50\xff\xfe\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "bne1, BNE"
+A: "fd5117, # branch to safe position  /ExCode 0"
+I: ""
+O: ""
+E: "0"

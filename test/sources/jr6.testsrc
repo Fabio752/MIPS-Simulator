@@ -1,0 +1,15 @@
+# jr6
+# Source assembly code:
+# > addiu $16, $16, 1
+# > sll $16, $16, 28
+# > addiu $16, $16, 20
+# > jr $16
+# > addiu $2, $2, 20
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x01\x00\x10\x87\x00\x26\x10\x00\x14\x02\x00\x00\x08\x24\x42\x00\x14\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "jr6, JR"
+A: "fd5117, # delay slot  /ExCode 20"
+I: ""
+O: ""
+E: "20"

@@ -1,0 +1,15 @@
+# div5
+# Source assembly code:
+# > addi $17, $17, -411
+# > addi $18, $18, 5
+# > div $17, $18
+# > sll $0, $0, 0
+# > mfhi $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x31\xfe\x65\x22\x52\x00\x05\x02\x32\x00\x1a\x00\x00\x00\x00\x00\x00\x10\x10\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "div5, DIV"
+A: "fd5117, # remainder(HI)  /ExCode 255"
+I: ""
+O: ""
+E: "255"

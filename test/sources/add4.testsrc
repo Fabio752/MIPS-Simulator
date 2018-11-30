@@ -1,0 +1,11 @@
+# add4
+# > addiu $2, $2, 20
+# > add $2, $2, $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x24\x42\x00\x14\x00\x42\x10\x20\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "add4, ADD"
+A: "fd5117, # Checking simple addition  /ExCode 40"
+I: ""
+O: ""
+E: "40"

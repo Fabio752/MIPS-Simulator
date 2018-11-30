@@ -1,0 +1,13 @@
+# add1
+# Source assembly code:
+# > addi $1, $1, 15
+# > sll $1, $1, 27
+# > add $1, $1, $1
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x20\x21\x00\x01\x00\x01\x0f\xc0\x00\x21\x08\x20\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "add1, ADD"
+A: "fd5117, # Negative Overflow  /ExCode 246"
+I: ""
+O: ""
+E: "246"

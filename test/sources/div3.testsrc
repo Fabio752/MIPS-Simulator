@@ -1,0 +1,12 @@
+# div3
+# Source assembly code:
+# > addi $17, $17, 429
+# > div $17, $0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x31\x01\xad\x02\x20\x00\x1a\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "div3, DIV"
+A: "fd5117, # Div by 0; NO exception  /ExCode 0"
+I: ""
+O: ""
+E: "0"

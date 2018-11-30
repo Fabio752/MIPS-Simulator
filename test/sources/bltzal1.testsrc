@@ -1,0 +1,16 @@
+# bltzal1
+# Source assembly code:
+# > addi $16, $16, -2
+# > addi $16, $16, 1
+# > bltzal $16,-2
+# > sll $0, $0, 0
+# > beq $0, $31, -6
+# > sll $0, $0, 0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x10\xff\xfe\x22\x10\x00\x01\x06\x10\xff\xfe\x00\x00\x00\x00\x10\x1f\xff\xfa\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "bltzal1, BLTZAL"
+A: "fd5117, # branch to safe position  /ExCode 0"
+I: ""
+O: ""
+E: "0"

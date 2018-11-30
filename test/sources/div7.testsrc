@@ -1,0 +1,17 @@
+# div7
+# Source assembly code:
+# > lui $4, 4095
+# > addiu $4, $4, 65535
+# > mtlo $4
+# > sll $0, $0, 0
+# > div $3, $4
+# > sll $0, $0, 0
+# > mflo $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x3c\x04\x0f\xff\x24\x84\xff\xff\x00\x80\x00\x13\x00\x00\x00\x00\x00\x64\x00\x1a\x00\x00\x00\x00\x00\x00\x10\x12\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "div7, DIV"
+A: "fd5117, #  quotient (LO)  /ExCode 0"
+I: ""
+O: ""
+E: "0"

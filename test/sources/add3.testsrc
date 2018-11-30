@@ -1,0 +1,14 @@
+# add3
+# Source assembly code:
+# > addi $16, $16, 3
+# > sll $17, $16, 29 
+# > sll $16, $16, 30
+# > add $16, $16, $17
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x10\x00\x03\x00\x10\x8f\x40\x00\x10\x87\x80\x02\x11\x80\x20\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "add3, ADD"
+A: "fd5117, # Safe sum  /ExCode 0"
+I: ""
+O: ""
+E: "0"

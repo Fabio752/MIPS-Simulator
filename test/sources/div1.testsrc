@@ -1,0 +1,15 @@
+# div1
+# Source assembly code:
+# > addi $17, $17, 429
+# > addi $18, $18, 7
+# > div $17, $1
+# > sll $0, $0, 0
+# > mflo $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x31\x01\xad\x22\x52\x00\x07\x02\x32\x00\x1a\x00\x00\x00\x00\x00\x00\x10\x12\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "div1, DIV"
+A: "fd5117, # quotient (LO)  /ExCode 61"
+I: ""
+O: ""
+E: "61"

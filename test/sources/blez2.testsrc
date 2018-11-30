@@ -1,0 +1,15 @@
+# blez2
+# Source assembly code:
+# > addi $16, $16, 0
+# > bgtz $16, 1
+# > sll $0, $0, 0
+# > blez $16, -7
+# > sll $0, $0, 0
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x10\x00\x00\x1e\x00\x00\x01\x00\x00\x00\x00\x1a\x00\xff\xf9\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "blez2, BLEZ"
+A: "fd5117, # branch to unsafe position  /ExCode 245"
+I: ""
+O: ""
+E: "245"

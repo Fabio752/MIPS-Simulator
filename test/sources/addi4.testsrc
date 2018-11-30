@@ -1,0 +1,10 @@
+# addi4
+# Source assembly code:
+# > addi $2, $2, 43
+# > jr $0
+B: "\x24\x42\x00\x2b\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "addi4, ADDI"
+A: "fd5117, # Safe addi  /ExCode 43"
+I: ""
+O: ""
+E: "43"

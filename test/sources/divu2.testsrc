@@ -1,0 +1,15 @@
+# divu2
+# Source assembly code:
+# > addi $17, $17, 429
+# > addi $18, $18, 7
+# > divu $17, $18
+# > sll $0, $0, 0
+# > mfhi $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x22\x31\x01\xad\x22\x52\x00\x07\x02\x32\x00\x1b\x00\x00\x00\x00\x00\x00\x10\x10\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "divu2, DIVU"
+A: "fd5117, # Remainder(HI)  /ExCode 2"
+I: ""
+O: ""
+E: "2"

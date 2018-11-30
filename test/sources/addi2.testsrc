@@ -1,0 +1,16 @@
+# addi2
+# Source assembly code:
+# > addi $1, $1, 32767
+# > sll $1, $1, 16
+# > addi $2, $2, 32767
+# > sll $2, $2, 1
+# > add $1, $1, $2
+# > addi $1, $1, 15305
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x24\x21\x7f\xff\x00\x01\x0c\x00\x20\x42\x7f\xff\x00\x02\x10\x40\x00\x22\x08\x20\x20\x21\x3b\xc9\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "addi2, ADDI"
+A: "fd5117, # Positive Overflow  /ExCode 246"
+I: ""
+O: ""
+E: "246"
