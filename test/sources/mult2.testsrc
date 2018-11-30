@@ -1,0 +1,16 @@
+# mult2
+# Source assembly code:
+# > lui $18, 65535
+# > addiu $18, $18, 65535
+# > addiu $17, $17, 69
+# > mult $18, $17
+# > sll $0, $0, 0 
+# > mflo $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x3c\x12\xff\xff\x26\x52\xff\xff\x26\x31\x00\x45\x02\x51\x00\x18\x00\x00\x00\x00\x00\x00\x10\x12\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "mult2, MULT"
+A: "fd5117, # multiplication results in Lo  /ExCode 187"
+I: ""
+O: ""
+E: "187"

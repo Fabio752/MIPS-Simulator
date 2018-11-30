@@ -1,0 +1,16 @@
+# mult1
+# Source assembly code:
+# > lui $18, 65535
+# > addiu $18, $18, 65535
+# > addiu $17, $17, 69
+# > mult $18, $17
+# > sll $0, $0, 0 
+# > mfhi $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x3c\x12\xff\xff\x26\x52\xff\xff\x26\x31\x00\x45\x02\x51\x00\x18\x00\x00\x00\x00\x00\x00\x10\x10\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "mult1, MULT"
+A: "fd5117, # multiplication results in Hi  /ExCode 255"
+I: ""
+O: ""
+E: "255"

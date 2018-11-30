@@ -1,0 +1,13 @@
+# ori2
+# Source assembly code:
+# > lui $17, 3
+# > ori $2, $17, 65535
+# > srl $2, $2, 16
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x3c\x11\x00\x03\x36\x22\xff\xff\x00\x02\x14\x02\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "ori2, ORI"
+A: "ms8817, # zero immediate extension  /ExCode 3"
+I: ""
+O: ""
+E: "3"

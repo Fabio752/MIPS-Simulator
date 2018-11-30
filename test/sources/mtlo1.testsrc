@@ -1,0 +1,37 @@
+# mtlo1
+# Source assembly code:
+# > addiu $16, $16, 3
+# > sll $16, $16, 28
+# > addiu $18, $0, 77
+# > mtlo $18
+# > sll $0, $0, 0 
+# > mflo $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 97
+# > mtlo $18
+# > sll $0, $0, 0 
+# > mflo $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 114
+# > mtlo $18
+# > sll $0, $0, 0 
+# > mflo $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 99
+# > mtlo $18
+# > sll $0, $0, 0 
+# > mflo $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 111
+# > mtlo $18
+# > sll $0, $0, 0 
+# > mflo $17
+# > sw $17, 4($16)
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x03\x00\x10\x87\x00\x24\x12\x00\x4d\x02\x40\x00\x13\x00\x00\x00\x00\x00\x00\x88\x12\xae\x11\x00\x04\x24\x12\x00\x61\x02\x40\x00\x13\x00\x00\x00\x00\x00\x00\x88\x12\xae\x11\x00\x04\x24\x12\x00\x72\x02\x40\x00\x13\x00\x00\x00\x00\x00\x00\x88\x12\xae\x11\x00\x04\x24\x12\x00\x63\x02\x40\x00\x13\x00\x00\x00\x00\x00\x00\x88\x12\xae\x11\x00\x04\x24\x12\x00\x6f\x02\x40\x00\x13\x00\x00\x00\x00\x00\x00\x88\x12\xae\x11\x00\x04\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "mtlo1, MTLO"
+A: "fd5117, # move from/to LO and store results to output  /ExCode 0" 
+I: "" 
+O: "Marco"
+E: "0"

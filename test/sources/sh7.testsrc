@@ -1,0 +1,19 @@
+# sh7
+# Source assembly code:
+# > addiu $16, $16, 2
+# > sll $16, $16, 28
+# > addiu $17, $0, 27259
+# > sll $17, $17, 8
+# > sw $17, 0($16)
+# > sh $0, 2($16)
+# > lw $2, 0($16)
+# > sll $0, $0, 0 
+# > sra $2, $2, 16
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x02\x00\x10\x87\x00\x24\x11\x6a\x7b\x00\x11\x8a\x00\xae\x11\x00\x00\xa6\x00\x00\x02\x8e\x02\x00\x00\x00\x00\x00\x00\x00\x02\x14\x03\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "sh7, SH"
+A: "ms8817, # Use sw to store a 16bit number; change part of it with sh; check if the change is what expected /ExCode 106"
+I: ""
+O: ""
+E: "106"

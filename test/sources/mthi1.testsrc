@@ -1,0 +1,37 @@
+# mthi1
+# Source assembly code:
+# > addiu $16, $16, 3
+# > sll $16, $16, 28
+# > addiu $18, $0, 70
+# > mthi $18
+# > sll $0, $0, 0 
+# > mfhi $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 97
+# > mthi $18
+# > sll $0, $0, 0 
+# > mfhi $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 98
+# > mthi $18
+# > sll $0, $0, 0 
+# > mfhi $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 105
+# > mthi $18
+# > sll $0, $0, 0 
+# > mfhi $17
+# > sw $17, 4($16)
+# > addiu $18, $0, 111
+# > mthi $18
+# > sll $0, $0, 0 
+# > mfhi $17
+# > sw $17, 4($16)
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x03\x00\x10\x87\x00\x24\x12\x00\x46\x02\x40\x00\x11\x00\x00\x00\x00\x00\x00\x88\x10\xae\x11\x00\x04\x24\x12\x00\x61\x02\x40\x00\x11\x00\x00\x00\x00\x00\x00\x88\x10\xae\x11\x00\x04\x24\x12\x00\x62\x02\x40\x00\x11\x00\x00\x00\x00\x00\x00\x88\x10\xae\x11\x00\x04\x24\x12\x00\x69\x02\x40\x00\x11\x00\x00\x00\x00\x00\x00\x88\x10\xae\x11\x00\x04\x24\x12\x00\x6f\x02\x40\x00\x11\x00\x00\x00\x00\x00\x00\x88\x10\xae\x11\x00\x04\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "mthi1, MTHI"
+A: "fd5117, # move from/to HI and store results to output  /ExCode 0"
+I: ""
+O: "Fabio"
+E: "0"

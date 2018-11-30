@@ -1,0 +1,14 @@
+# mflo1
+# Source assembly code:
+# > addiu $18, $18, 73
+# > mtlo $18
+# > sll $0, $0, 0 
+# > mflo $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x52\x00\x49\x02\x40\x00\x13\x00\x00\x00\x00\x00\x00\x10\x12\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "mflo1, MFLO"
+A: "fd5117, # move from/to Lo  /ExCode 73"
+I: ""
+O: ""
+E: "73"

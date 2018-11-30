@@ -1,0 +1,17 @@
+# sb4
+# Source assembly code:
+# > addiu $16, $16, 3
+# > sll $16, $16, 28
+# > addiu $17, $17, 97
+# > sb $17, 7($16)
+# > sb $17, 5($16)
+# > addiu $17, $0, 256
+# > sb $17, 7($16)
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x03\x00\x10\x87\x00\x26\x31\x00\x61\xa2\x11\x00\x07\xa2\x11\x00\x05\x24\x11\x01\x00\xa2\x11\x00\x07\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "sb4, SB"
+A: "ms8817, # Sb stores to ADDR_PUTC + 1 and ADDR_PUTC + 3 /ExCode 0"
+I: ""
+O: "a\x00\x00"
+E: "0"

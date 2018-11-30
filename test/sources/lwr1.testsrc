@@ -1,0 +1,10 @@
+# lwr1
+# Source assembly code:
+# > lwr $0, 0($0)
+# > sll $0, $0, 0 
+B: "\x98\x00\x00\x00\x00\x00\x00\x00"
+T: "lwr1, LWR"
+A: "ms8817, # Loading left word from invalid position  /ExCode 245"
+I: ""
+O: ""
+E: "245"

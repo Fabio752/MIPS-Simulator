@@ -1,0 +1,14 @@
+# mfhi1
+# Source assembly code:
+# > addiu $18, $18, 73
+# > mthi $18
+# > sll $0, $0, 0 
+# > mfhi $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x26\x52\x00\x49\x02\x40\x00\x11\x00\x00\x00\x00\x00\x00\x10\x10\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "mfhi1, MFHI"
+A: "fd5117, # move from/to HI  /ExCode 73"
+I: ""
+O: ""
+E: "73"

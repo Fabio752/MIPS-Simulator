@@ -1,0 +1,14 @@
+# sll2
+# Source assembly code:
+# > addiu $17, $0, 49
+# > sll $2, $17, 1
+# > sll $17, $17, 31
+# > addu $2, $2, $17
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x24\x11\x00\x31\x00\x11\x10\x40\x00\x11\x8f\xc0\x00\x51\x10\x21\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "sll2, SLL"
+A: "ms8817, # simple sll test  /ExCode 98"
+I: ""
+O: ""
+E: "98"

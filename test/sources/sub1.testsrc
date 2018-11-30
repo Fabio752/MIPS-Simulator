@@ -1,0 +1,14 @@
+# sub1
+# Source assembly code:
+# > addiu $16, $16, 1
+# > sll $16, $16, 30
+# > addi $17, $17, -1
+# > sll $17, $17, 30
+# > sub $18, $16, $17
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x01\x00\x10\x87\x80\x22\x31\xff\xff\x00\x11\x8f\x80\x02\x11\x90\x22\x00\x00\x00\x00"
+T: "sub1, SUB"
+A: "fd5117, # Positive overflow  /ExCode 246"
+I: ""
+O: ""
+E: "246"

@@ -1,0 +1,12 @@
+# sb8
+# Source assembly code:
+# > addiu $16, $16, 1
+# > sll $16, $16, 24
+# > sb $17, 0($16)
+# > sll $0, $0, 0 
+B: "\x26\x10\x00\x01\x00\x10\x86\x00\xa2\x11\x00\x00\x00\x00\x00\x00"
+T: "sb8, SB"
+A: "ms8817, # Sb stores to ADDR_INSTR  /ExCode 245"
+I: ""
+O: ""
+E: "245"

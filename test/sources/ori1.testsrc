@@ -1,0 +1,12 @@
+# ori1
+# Source assembly code:
+# > addiu $17, $0, 32
+# > ori $2, $17, 15
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x24\x11\x00\x20\x36\x22\x00\x0f\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "ori1, ORI"
+A: "ms8817, # Safe ori  /ExCode 47"
+I: ""
+O: ""
+E: "47"

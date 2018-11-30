@@ -1,0 +1,16 @@
+# srav1
+# Source assembly code:
+# > addiu $17, $0, 98
+# > addiu $20, $20, 1
+# > srav $2, $17, $20
+# > addiu $20, $0, 1000
+# > srav $17, $17, $20
+# > addu $2, $2, $17
+# > jr $0
+# > sll $0, $0, 0
+B: "\x24\x11\x00\x62\x26\x94\x00\x01\x02\x91\x10\x07\x24\x14\x03\xe8\x02\x91\x88\x07\x00\x51\x10\x21\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "srav1, SRAV"
+A: "ms8817, # Performs some safe right arithmetic shifts variable  /ExCode 49"
+I: ""
+O: ""
+E: "49"

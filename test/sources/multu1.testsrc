@@ -1,0 +1,16 @@
+# multu1
+# > lui $4, 65535 
+# > ori $4, $4, 65535
+# > lui $5, 65535
+# > ori $5, $5, 65535
+# > multu $5, $4
+# > sll $0, $0, 0 
+# > mfhi $2
+# > jr $0
+# > sll $0, $0, 0 
+B: "\x3c\x04\xff\xff\x34\x84\xff\xff\x3c\x05\xff\xff\x34\xa5\xff\xff\x00\xa4\x00\x19\x00\x00\x00\x00\x00\x00\x10\x10\x00\x00\x00\x08\x00\x00\x00\x00"
+T: "multu1, MULTU"
+A: "fd5117, # unsigned multiplication result in Hi  /ExCode 254"
+I: ""
+O: ""
+E: "254"
